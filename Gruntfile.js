@@ -11,21 +11,23 @@ module.exports = function(grunt) {
         helpers: [
           'spec/support/*.js'
         ],
-        specs : 'spec/**/*.spec.js',
+        specs: 'spec/**/*.spec.js',
         vendor: [
           'spec/lib/jquery*.js',
-          'spec/lib/underscore.js',
-          'spec/lib/backbone.js'
+          'bower_components/lodash/lodash.js',
+          'bower_components/backbone/backbone.js'
         ],
-        timeout : 5000,
-        phantomjs : { 'ignore-ssl-errors' : true }
+        timeout: 5000,
+        phantomjs: {
+          'ignore-ssl-errors': true
+        }
       }
     },
 
     connect: {
-      spec : {
+      spec: {
         options: {
-          port : 8000
+          port: 8000
         }
       }
     },
@@ -33,9 +35,9 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '/*  <%= pkg.name %> v<%= pkg.version %> ' +
-        "(<%= grunt.template.today('yyyy-mm-dd') %>)\n" +
-        "  by <%= pkg.author %> - <%= pkg.repository.url %>\n" +
-        ' */\n',
+          "(<%= grunt.template.today('yyyy-mm-dd') %>)\n" +
+          "  by <%= pkg.author %> - <%= pkg.repository.url %>\n" +
+          ' */\n',
         mangle: {
           except: ['_', 'Backbone']
         }

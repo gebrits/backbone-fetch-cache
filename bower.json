@@ -15,9 +15,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "backbone": ">=1.0.0"
+    "backbone": "https://github.com/gebrits/backbone.git#1db48e6234fd321ee1e222b383de721ff6b0a95a",
+    "lodash": "~3.2.0"
   },
   "ignore": [
     "node_modules"
-  ]
+  ],
+  "resolutions": {
+    "backbone": "1db48e6234fd321ee1e222b383de721ff6b0a95a",
+    "lodash": "~3.1.0"
+  }
 }
